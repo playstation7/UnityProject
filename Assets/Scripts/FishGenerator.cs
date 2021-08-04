@@ -33,12 +33,12 @@ public class FishGenerator : MonoBehaviour
         if (rightFish)
         {
             x = 11;
-            fish.GetComponent<Fish>().movement.x = -0.4f;
+            fish.GetComponent<Fish>().movement.x = -0.1f;
             fish.GetComponent<Transform>().Rotate(0f, 180f, 0f);
         } else
         {
             x = -11;
-            fish.GetComponent<Fish>().movement.x = 0.4f;
+            fish.GetComponent<Fish>().movement.x = 0.1f;
         }
 
         fish.GetComponent<Transform>().position = new Vector3(x,y,1);

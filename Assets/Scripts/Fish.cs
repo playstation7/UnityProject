@@ -26,6 +26,15 @@ public class Fish : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        Wall wall = collision.GetComponent<Wall>();
+        if (wall != null)
+        {
+            Destroy(gameObject);
+        }
+        Hook hook = collision.GetComponent<Hook>();
+        if (hook != null)
+        {
+            hook.catchFish(gameObject);
+        }
     }
 }
