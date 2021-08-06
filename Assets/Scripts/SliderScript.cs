@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class SliderScript : MonoBehaviour
 {
-
+    public GameObject menuPanel;
     public Slider slider;
+    public bool gameOver;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,11 @@ public class SliderScript : MonoBehaviour
     {
         yield return new WaitForSeconds(0.10f);
         slider.value -= 0.3f;
+        if (slider.value == 0) 
+        {
+            menuPanel.SetActive(true);
+            gameOver = true;
+        }
         StartCoroutine(progressBar());
     }
 

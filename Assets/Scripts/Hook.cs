@@ -20,13 +20,14 @@ public class Hook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (SystemInfo.deviceType == DeviceType.Desktop)
         {
             Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             Vector2 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
 
 
-            if (worldPosition.y + offset < 8.3f && worldPosition.y > 0.5)
+            if (worldPosition.y + offset < 8.3f && worldPosition.y > 0.5 && !progressBar.GetComponent<SliderScript>().gameOver)
             {
                 transform.position = new Vector3(transform.position.x, worldPosition.y + offset, 1);
                 if (worldPosition.y > 8f + offset && catchfishing)
@@ -38,7 +39,7 @@ public class Hook : MonoBehaviour
                 }
             }
         }
-        else if (Input.touchCount > 0)
+        else if (Input.touchCount > 0 && !progressBar.GetComponent<SliderScript>().gameOver)
         {
             Touch touch = Input.GetTouch(0);
             Vector3 toucPosition = Camera.main.ScreenToWorldPoint(touch.position);
