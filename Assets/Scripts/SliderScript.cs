@@ -7,6 +7,8 @@ public class SliderScript : MonoBehaviour
 {
     public GameObject menuPanel;
     public Slider slider;
+    public GameObject pauseButton;
+    public GameObject timer;
     public bool gameOver;
     // Start is called before the first frame update
     void Start()
@@ -26,7 +28,12 @@ public class SliderScript : MonoBehaviour
         if (slider.value == 0) 
         {
             menuPanel.SetActive(true);
+            
+            pauseButton.SetActive(false);
+            
+            //timer.SetActive(false);
             gameOver = true;
+            
         }
         StartCoroutine(progressBar());
     }
@@ -35,4 +42,6 @@ public class SliderScript : MonoBehaviour
     {
         slider.value += (float)points;
     }
+
+    
 }

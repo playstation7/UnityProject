@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Wall
   - Hook
+  - Shark
+  - Fish
+  - FishOnHook
+  - Trash
   layers:
   - Default
   - TransparentFX
